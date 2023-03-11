@@ -1,3 +1,15 @@
+
+- 2023/03/11
+- https://catalog.workshops.aws/cfn101/en-US/prerequisites/lab-resources
+- 使用 `eu-west-2`, 使用 `2023q1`
+- [如果想知道底下這些的差異, 讀這篇](https://catalog.workshops.aws/cfn101/en-US/basics/templates/resource-return-values#overview)
+    - Ref
+    - Fn::GetAtt
+    - Fn::Sub
+- 如果要測試 CloudFormation, 可參考 `taskcat` 及 `cfn-lint`, 或是參考這篇 [debug and test CloudFormation](https://catalog.workshops.aws/cfn101/en-US/basics/templates/linting-and-testing)
+
+---
+
 <h1 align="center">
 AWS CloudFormation - Workshop
 <br>
