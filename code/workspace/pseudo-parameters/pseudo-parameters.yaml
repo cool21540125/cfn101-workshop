@@ -10,6 +10,14 @@ Parameters:
     Default: alice
     Description: Value to be used with the dbUsername SSM parameter. The default value is set to 'alice', which users can override when creating a CloudFormation stack.
 
+  S3BucketNamePrefix:
+    Description: The prefix to use for your S3 bucket
+    Type: String
+    Default: cfn-workshop
+    AllowedPattern: ^(?!(^xn--|.$))^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$
+    ConstraintDescription: Bucket name prefix can include numbers, lowercase letters, uppercase letters, and hyphens (-). It cannot start or end with a hyphen (-).
+
+
 Resources:
   BasicParameter:
     Type: AWS::SSM::Parameter
@@ -56,3 +64,8 @@ Resources:
           def lambda_handler(event, context):
               response = client.get_parameter(Name='dbUsername')
               print(f'SSM dbUsername parameter value: {response["Parameter"]["Value"]}')
+
+  DemoBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${S3BucketNamePrefix}-${AWS::Region}-${AWS::AccountId}"
