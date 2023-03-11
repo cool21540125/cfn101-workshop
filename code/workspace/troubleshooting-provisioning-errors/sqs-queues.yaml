@@ -17,10 +17,7 @@ Resources:
   SourceQueue:
     Type: AWS::SQS::Queue
     Properties:
-      # This example source queue is configured as a standard queue,
-      # whilst the dead-letter queue resource uses `true` for the
-      # `FifoQueue` property instead; this will result in an error.
-      FifoQueue: false
+      FifoQueue: true
       RedrivePolicy:
         deadLetterTargetArn: !GetAtt DeadLetterQueue.Arn
         maxReceiveCount: 5
