@@ -6,3 +6,4 @@ Resources:
     Properties:
       AvailabilityZone: !Select ['0', !GetAZs ""]
       InstanceType: 't2.micro'
+      ImageId: '{{resolve:ssm:/golden-images/amazon-linux-2}}'
