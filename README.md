@@ -6,6 +6,11 @@
     - Ref
     - Fn::GetAtt
 - 如果要測試 CloudFormation, 可參考 `taskcat` 及 `cfn-lint`, 或是參考這篇 [debug and test CloudFormation](https://catalog.workshops.aws/cfn101/en-US/basics/templates/linting-and-testing)
+- Dynamic References
+    - 可參考 `code/workspace/dynamic-references/ec2-instance.yaml`
+    - 可讓 Resources 動態參考 SSM Parameters 裡頭的變數名稱
+    - 若要參考 `Secrets Manager`, [再來看這邊](https://catalog.workshops.aws/cfn101/en-US/intermediate/templates/dynamic-references#dynamic-references-for-aws-secrets-manager)
+
 
 ---
 
