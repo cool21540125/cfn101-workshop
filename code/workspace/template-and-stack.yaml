@@ -2,14 +2,17 @@ AWSTemplateFormatVersion: "2010-09-09"
 
 Description: AWS CloudFormation workshop - Template and stack (uksb-1q9p31idr).
 
-# Add your code here!
 Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketEncryption:
-        ServerSideEncryptionConfiguration:
-          - ServerSideEncryptionByDefault:
-              SSEAlgorithm: AES256
+      BucketName: stack-dependencies
       VersioningConfiguration:
         Status: Enabled
+      Tags:
+        - Key: Name
+          Value: stack-dependencies
+        - Key: Usage
+          Value: 'Put main stack dependencies'
+        - Key: Date
+          Value: '2023-03-21'
